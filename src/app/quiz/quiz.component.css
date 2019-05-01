@@ -1,0 +1,18 @@
+.dots{
+  /* position: relative; */
+    bottom: 100px;
+    list-style-type: none;
+    display: inline;
+    padding: 7px;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #0D7BAB;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .grey {
+    background-color: #C9CFD3;
+  }
