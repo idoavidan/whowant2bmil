@@ -1,6 +1,7 @@
 <div>
-  <app-question >
-
+  <!-- <app-question question="getQuestion(questions,index)"> -->
+  <app-question question="[questions['index']]" (next)="onNext($event)">
+      
   </app-question>
   <ul>
       <li *ngFor="let question of questions; let i = index" class="dots">

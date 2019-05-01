@@ -14,9 +14,12 @@ export class QuizComponent implements OnInit {
   constructor(private _QuizService: QuizService) { }
   ngOnInit() {
      this._QuizService.getQuestions().subscribe(
-      data => { this.questions = data["results"];},
+      data => { this.questions = data["results"];console.log(this.questions)},
       err => console.error(err)
      );
+  }
+  onNext(event){
+    this.index = this.index + 1;
   }
 
 }

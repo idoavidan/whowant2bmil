@@ -1,26 +1,24 @@
 .topImg{
     transform: rotate(180deg);
-    /* position: absolute; */
     top: 0;
-    width: 100vh;
-    margin: 0;
-  padding: 0;
-    /* width:"868px"; */
-    /* height:"104px";  */
+    max-width: 100%;
+  vertical-align: middle;
+
 }
 .botImg{
-    position: absolute;
+    transform: translate(-50%);
+    position: fixed;
     bottom: 0;
-    width: 100vh;
-    margin: 0;
-  padding: 0;
+    max-width: 100%;
+
 }
 .content{
-    text-align: center;
-    height: 100%;
+    /* text-align: center; */
+    /* height: 100%; */
 
 }
 .main{
+    text-align: center;
     height: 100%;
     width: 100%;
     padding: 0;

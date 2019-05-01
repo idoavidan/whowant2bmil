@@ -1,5 +1,5 @@
 .dots{
-  /* position: relative; */
+  /* position: fixed; */
     bottom: 100px;
     list-style-type: none;
     display: inline;
