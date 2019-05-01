@@ -1,0 +1,12 @@
+<div>
+  quiz works!
+  <ul>
+      <li *ngFor="let question of questions; let i = index">
+        {{i}}
+        <div *ngIf="index>=i; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>Content to render when condition is true.</ng-template>
+        <ng-template #elseBlock>Content to render when condition is false.</ng-template>
+      </li>
+    </ul>
+      
+  </div>
