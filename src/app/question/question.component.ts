@@ -6,22 +6,52 @@ import { Component, OnInit, Input,Output, EventEmitter  } from '@angular/core';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-  // private _questionObject: Object;
-  @Input() question: any;
-  // @Input() correct_answer: String;
-  // @Input() incorrect_answers: [String];
-  // @Input() index : Number;
-  // @Input() set questionObject(questionObject : Object){
-  //   this._questionObject.question = 
-  // }
+  private _answers = [String];
+  private _questionStr;
+  private _correct;
+  private _state;
+  private _inputAnswer; 
+
+  // @Input() question: any;
+  @Input() index;
+  @Input()
+  set question(question){
+    this._answers = [question.correct_answer,...question.incorrect_answers];
+    this.shuffle(this._answers);
+    this._questionStr = question.question;
+    this._correct = question.correct_answer;
+    this._state = 0;
+  }
   @Output() next: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
+  
   clickNext() {
-      this.next.emit(null);
-  }
+    this._state = this._state + 1;
+    if(this._state === 2){
+      if(this._answers[this._inputAnswer] === this._correct){
 
+      }else{
+
+      }
+    }
+    if(this._state === 3){
+      this.next.emit(null);
+    }
+  }
+  private selectAnswer(_answerNum){
+    this._inputAnswer = _answerNum; 
+    this._state++;
+
+  }
+  private shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
 
 }

@@ -1,12 +1,31 @@
 
 <div class="questionBox">
   <p>
-    {{question}}
+    Q{{index + 1}} {{_questionStr}}
   </p>
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-  <button (click)="clickNext()">OK</button>
+  <div class="answers">
+    <div class="answersTop">
+      <button class="answer" (click)="selectAnswer(0)">{{_answers[0]}}</button>
+      <button class="answer" (click)="selectAnswer(1)">{{_answers[1]}}</button>
+    </div>
+    <div class="answersBot">
+      <button class="answer" (click)="selectAnswer(2)">{{_answers[2]}}</button>
+      <button class="answer" (click)="selectAnswer(3)">{{_answers[3]}}</button>
+    </div>
+  </div>
+  <div *ngIf="_state==0; then thenBlock else elseBlock"></div>  
+  <ng-template #thenBlock>
+      <button (click)="clickNext()" disabled>OK</button>
+  </ng-template>
+  <ng-template #elseBlock>
+      <div *ngIf="_state==1; then thena else elsea"></div>  
+      <ng-template #thena>
+          <button (click)="clickNext()">OK</button>
+      </ng-template>
+      <ng-template #elsea>
+          <button (click)="clickNext()">Continue</button>
+      </ng-template>
+  </ng-template>
+
 
 </div>

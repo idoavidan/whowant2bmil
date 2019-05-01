@@ -1,6 +1,6 @@
 <div>
   <!-- <app-question question="getQuestion(questions,index)"> -->
-  <app-question question="[questions['index']]" (next)="onNext($event)">
+  <app-question [question]="questions[index]" [index]="index" (next)="onNext($event)">
       
   </app-question>
   <ul>
