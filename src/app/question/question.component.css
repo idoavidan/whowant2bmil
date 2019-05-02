@@ -96,3 +96,6 @@
 .orngBtn{
     background: #FF8F48;
 }
+.orngBtn:hover{
+    background: #F68034;
+}
