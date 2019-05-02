@@ -43,8 +43,10 @@ export class QuestionComponent implements OnInit {
     }
   }
   private selectAnswer(_answerNum){
-    this._inputAnswer = _answerNum; 
-    this._state = 1;
+    if(this._state <= 1){
+      this._inputAnswer = _answerNum; 
+      this._state = 1;
+    }
   }
   private shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
