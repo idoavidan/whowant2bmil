@@ -1,14 +1,15 @@
-<div>
+<div class="content">
   <!-- <app-question question="getQuestion(questions,index)"> -->
   <app-question [question]="questions[index]" [index]="index" (next)="onNext($event)">
       
   </app-question>
-  <ul>
-      <li *ngFor="let question of questions; let i = index" class="dots">
-        <div *ngIf="index>=i; then thenBlock else elseBlock"></div>  
-        <ng-template #thenBlock><span class="dot"></span></ng-template>
-        <ng-template #elseBlock><span class="dot grey"></span></ng-template>
-      </li>
-    </ul>
-      
+  <div class="dotsBar">
+      <ul style="padding:0">
+          <li *ngFor="let question of questions; let i = index" class="dots">
+            <div *ngIf="index>=i; then thenBlock else elseBlock"></div>  
+            <ng-template #thenBlock><span class="dot"></span></ng-template>
+            <ng-template #elseBlock><span class="dot grey"></span></ng-template>
+          </li>
+        </ul>
+  </div>      
   </div>

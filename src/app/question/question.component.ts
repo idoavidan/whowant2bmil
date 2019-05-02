@@ -28,23 +28,23 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {
   }
   
-  clickNext() {
+  private clickNext() {
     this._state = this._state + 1;
-    if(this._state === 2){
-      if(this._answers[this._inputAnswer] === this._correct){
-
-      }else{
-
-      }
-    }
     if(this._state === 3){
       this.next.emit(null);
     }
   }
+  private isCorrect(_answerNum){
+    return {
+      'answer': true ,
+      wrong : this._state==2&&this._correct!=this._answers[_answerNum]&&this._inputAnswer==_answerNum, 
+      right : this._state==2&&this._correct==this._answers[_answerNum]&&this._inputAnswer==_answerNum,
+      selected : this._state==1&&this._inputAnswer==_answerNum
+    }
+  }
   private selectAnswer(_answerNum){
     this._inputAnswer = _answerNum; 
-    this._state++;
-
+    this._state = 1;
   }
   private shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
