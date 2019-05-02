@@ -2,7 +2,6 @@
   position: fixed;
   bottom: 10vh;
   width: 100%;
-  /* left: 25; */
   display: flex;
   justify-content: space-around;
   align-items: center; 
@@ -10,12 +9,9 @@
   padding: 0;
 }
 .dots{
-  /* position: fixed; */
-    /* bottom: 7vh; */
     list-style-type: none;
     display: inline;
     padding: 7px;
-    /* margin-top: 20px; */
 }
 .dot {
     height: 15px;
@@ -28,8 +24,3 @@
   .grey {
     background-color: #C9CFD3;
   }
-  .content{
-    /* text-align: center; */
-    /* height: 100%; */
-
-}
